@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SQL Expression Parser</title>
+	<script src="lib-sql-to-expression.js"></script>
+</head>
+<body>
+
+<script>
+	var sqlep = new sqlToExpression("SELECT `a`.`name`.dsf,`age` FROM `tableName` `a` " +
+		"LEFT JOIN `innerTable` `inner1` ON `inner1`.`a` = `test` " +
+		"LEFT JOIN `innerTable2` `inner2` ON `inner2` = `wallak` " +
+		"WHERE `a`.`test` = 'Y' AND `a`.test2` = 'N' OR `b`.`test` = 'OK'" +
+		"ORDER BY `id` DESC");
+	console.log(sqlep.run());
+	console.log(sqlep);
+</script>
+</body>
+</html>
